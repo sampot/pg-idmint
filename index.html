@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="UUID／NanoID 批量產生。純前端 Playgrounds SAM。" />
+    <title>識別碼小造</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>識別碼小造</h1>
+        <p class="tagline">UUID v4 · NanoID · 批量產生</p>
+      </header>
+      <p id="kind-note" class="note"></p>
+      <label class="field"><span>種類</span>
+        <select id="kind">
+          <option value="uuid">UUID v4</option>
+          <option value="nanoid">NanoID</option>
+        </select>
+      </label>
+      <label class="field"><span>數量（1–500）</span>
+        <input id="count" type="number" min="1" max="500" value="5" />
+      </label>
+      <div id="size-row" hidden>
+        <label class="field"><span>NanoID 長度</span>
+          <input id="size" type="number" min="4" max="64" value="21" />
+        </label>
+      </div>
+      <div class="controls">
+        <button type="button" id="btn-gen" class="primary">產生</button>
+        <button type="button" id="btn-copy" class="secondary">複製</button>
+        <button type="button" id="btn-clear" class="secondary">清空</button>
+      </div>
+      <label class="field"><span>結果</span>
+        <textarea id="output" rows="12" readonly spellcheck="false"></textarea>
+      </label>
+      <p class="hint">Playgrounds <a href="https://samkuo.me/playgrounds/">遊樂場</a> 開源小品。</p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
